@@ -103,7 +103,7 @@ export default definePlugin({
         },
         {
             name: "vc-plugins",
-            description: "Send Vencord plugin list (by ",
+            description: "Send Vencord plugin list",
             execute: () => ({ content: generatePluginList() })
         }
     ],
