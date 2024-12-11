@@ -16,17 +16,17 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import { getUserSettingLazy } from "@api/UserSettings"; // not del 50
-import { tryOrElse } from "@utils/misc"; // del isPluginDev save tryOrElse
-import { makeCodeblock } from "@utils/text"; // not del 103, 106
-import definePlugin from "@utils/types"; // not del
+import { getUserSettingLazy } from "@api/UserSettings";
+import { tryOrElse } from "@utils/misc";
+import { makeCodeblock } from "@utils/text";
+import definePlugin from "@utils/types";
 
-import gitHash from "~git-hash"; // not del 67
-import plugins, { PluginMeta } from "~plugins"; // not del many
+import gitHash from "~git-hash";
+import plugins, { PluginMeta } from "~plugins";
 
-import SettingsPlugin from "plugins/_core/settings.tsx"; // not del 68
+import SettingsPlugin from "plugins/_core/settings.tsx";
 
-const ShowCurrentGame = getUserSettingLazy<boolean>("status", "showCurrentGame")!; // not del 79
+const ShowCurrentGame = getUserSettingLazy<boolean>("status", "showCurrentGame")!;
 
 async function generateDebugInfoMessage() {
     const { RELEASE_CHANNEL } = window.GLOBAL_ENV;
@@ -92,7 +92,7 @@ function generatePluginList() {
 
 export default definePlugin({
     name: "Debug Everywhere",
-    description: "Allows vencord-debug & vencord-plugins in all channels (but vc-debug & vc-plugins)",
+    description: "Allows /vencord-debug and /vencord-plugins to be used in all channels (but they are now called /vc-debug and /vc-plugins)",
     authors: [{ name: "Mishonok", id: 860957238246899772n }],
 
     commands: [
